@@ -1,5 +1,3 @@
-console.log("hola mundo");
-
 const funcAsync = async () => {
     try {
         const peticion = await fetch('https://jsonplaceholder.typicode.com/users/1/todos');
