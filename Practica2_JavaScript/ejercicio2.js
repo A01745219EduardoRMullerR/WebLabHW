@@ -17,7 +17,7 @@ class CalculadoraPromise {
               console.log(`La suma de ${n1} con ${n2} es: ${n1 + n2}`);
             }
           },
-          //Funcion que se invoca en reject
+          
           function error() {
             console.log("Ejecucion fallada");
           }
