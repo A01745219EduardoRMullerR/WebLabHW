@@ -26,7 +26,7 @@ class Calculadora{
             console.log("La operacion " + this.operacion + " de " + a + " y " + b + " resulta en " + resta);
         }
     }
-    multiplicacion(a, b, ){
+    multiplicacion(a, b, c){
         this.operacion = "multiplicacion"
         let multi = a * b;
         if(c){
