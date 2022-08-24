@@ -4,6 +4,7 @@ class CalculadoraPromise {
       let prom = new Promise((resolve, reject) => {
         setTimeout(() => {
           resolve();
+          //reject();
         }, 5000);
       });
   
@@ -35,3 +36,5 @@ class CalculadoraPromise {
     calcProm.suma(3,4,2);
     console.log("Suma")
   }
+
+  main()
