@@ -2,48 +2,52 @@ class Calculadora{
     constructor(){
         this.operacion = null;
     }
-    suma(a, b, c = 1){
+    suma(a, b, c){
         this.operacion = "suma";
         let suma = a + b
-        let result = (a + b) * c;
-        if(c === 1){
-            console.log("La operacion " + this.operacion + " de " + a + " y " + b + " resulta en " + result);
-        }else{
+        if(c){
+            let result = suma * c;
             console.log("La operacion " + this.operacion + " de " + a + " y " + b + " resulta en " + suma + " y multiplicado por "
             + c + " es igual a " + result);
+            
+        }else{
+            console.log("La operacion " + this.operacion + " de " + a + " y " + b + " resulta en " + suma);
         }
     }
-    resta(a, b, c = 1){
+    resta(a, b, c){
         this.operacion = "resta";
         let resta = a - b;
-        let result = (a - b) * c;
-        if(c === 1){
-            console.log("La operacion " + this.operacion + " de " + a + " y " + b + " resulta en " + result);
-        }else{
+        if(c){
+            let result = resta * c;
             console.log("La operacion " + this.operacion + " de " + a + " y " + b + " resulta en " + resta + " y multiplicado por "
             + c + " es igual a " + result);
+            
+        }else{
+            console.log("La operacion " + this.operacion + " de " + a + " y " + b + " resulta en " + resta);
         }
     }
-    multiplicacion(a, b, c = 1){
+    multiplicacion(a, b, c){
         this.operacion = "multiplicacion"
         let multi = a * b;
-        let result = a * b * c;
-        if(c === 1){
-            console.log("La operacion " + this.operacion + " de " + a + " y " + b + " resulta en " + result);
-        }else{
+        if(c){
+            let result = multi * c;
             console.log("La operacion " + this.operacion + " de " + a + " y " + b + " resulta en " + multi + " y multiplicado por "
             + c + " es igual a " + result);
+            
+        }else{
+            console.log("La operacion " + this.operacion + " de " + a + " y " + b + " resulta en " + multi);
         }
     }
-    division(a, b, c = 1){
+    division(a, b, c){
         this.operacion = "division";
         let div = a/b;
-        let result = a / b * c;
-        if(c === 1){
-            console.log("La operacion " + this.operacion + " de " + a + " y " + b + " resulta en " + result);
-        }else{
+        if(c){
+            let result = div * c;
             console.log("La operacion " + this.operacion + " de " + a + " y " + b + " resulta en " + div + " y multiplicado por "
             + c + " es igual a " + result);
+            
+        }else{
+            console.log("La operacion " + this.operacion + " de " + a + " y " + b + " resulta en " + div);
         }
     }
 }
