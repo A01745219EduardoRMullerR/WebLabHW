@@ -1,9 +1,10 @@
 import React from 'react'; 
 import ReactDOM from 'react-dom'; 
- 
-const titulo = <h1>Mis Videojuegos</h1>; 
+import VideojuegosApp from './VideojuegosApp'; 
+import './index.css'; 
  
 const divRoot = document.querySelector('#root'); 
  
-//Injectamos el JSX de la variable titulo al divRoot utilizando ReactDOM 
-ReactDOM.render(titulo, divRoot); 
+//Utilizamos un prop 'nombre' para enviar información al componente 
+// VideojuegosApp 
+ReactDOM.render(<VideojuegosApp nombre='Carlos' />, divRoot); 
