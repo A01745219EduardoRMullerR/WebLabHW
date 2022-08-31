@@ -7,4 +7,4 @@ const divRoot = document.querySelector('#root');
  
 //Utilizamos un prop 'nombre' para enviar información al componente 
 // VideojuegosApp 
-ReactDOM.render(<VideojuegosApp nombre='Carlos' />, divRoot); 
+ReactDOM.render(<VideojuegosApp nombre='CHAD' />, divRoot); 
