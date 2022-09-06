@@ -1,12 +1,13 @@
 import React, { useState } from 'react'; 
 import { AgregaGenero } from './componentes/AgregaGenero'; 
 import { ResultadoVideojuegos } from './componentes/ResultadoVideojuegos'; 
+import { InfoVideojuegos } from './componentes/InfoVideojuegos';
  
 export const VideojuegosApp = () => { 
  
     //Utilizamos el hook useState para inicializar la lista de generos de videojuegos. 
     const [generos, setGeneros] = useState(['action']); 
- 
+
     {/*Se elimina la función agregaGenero*/} 
  
     return ( 
@@ -21,7 +22,9 @@ export const VideojuegosApp = () => {
                     Creamos una propiedad 'setGeneros' al componente AgregaGenero y le pasamos como valor la 
                     referencia de la función 'setGeneros' que obtuvimos en la desestructuración del useState 
                     */} 
-                    <AgregaGenero setGeneros={setGeneros} /> 
+                    <AgregaGenero setGeneros={setGeneros} />
+
+                    
  
                     {/*Se eliminó el botón*/} 
  
@@ -40,7 +43,10 @@ export const VideojuegosApp = () => {
                                 /> 
                             }) 
                         } 
-                    </ol> 
+                    </ol>
+                </div>
+                <div>
+                    <InfoVideojuegos/>
                 </div> 
             </div> 
  
