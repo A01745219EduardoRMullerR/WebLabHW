@@ -43,7 +43,6 @@ export const InfoVideojuegos = () =>{
 
 
 }
-
 function Card(Props){
     return(
         <div className="card">
