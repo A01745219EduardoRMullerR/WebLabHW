@@ -12,7 +12,7 @@ export const InfoVideojuegos = () =>{
 
     const getVideojuegos = async () => {
         //URL del api de RAWG que validamos en postman 
-        const url = 'https://api.rawg.io/api/games?key=4a01421ec4d5488d910ed0319522a1b1&genres=action';
+        const url = 'https://api.rawg.io/api/games?key=1d1f0a311f094ba3af26503c85757806&genres=action';
         //Utilizamos Fetch API para invocar la url. 
         const respuesta = await fetch(url);
         //Recuperamos el JSON de la respuesta, el cual contiene la información de los videojuegos. 
@@ -32,20 +32,25 @@ export const InfoVideojuegos = () =>{
 
     return(
         <>
-        <ol className="list-group"></ol>
-            {
-                infoJuegos.map(({nombre, imagen}) => (
-                    <Card name={nombre} background_image={imagen}/> 
+        <div  class="d-flex flex-wrap">
+            <div className="d-flex flex-row">{
+                infoJuegos.map(({nombre, imagen, rating, metacritic}) => (
+                    <div class="p-2"> <Card name={nombre} background_image={imagen} rating ={rating} metacritic = {metacritic}/> </div>
                 ))
-            } 
+            } </div>
+            </div>
+            
         </>
     )
 
     function Card(Props){
         return(
+
             <div className="card">
-                <div className="card-body">{Props.name}</div>
-                <img src="{Props.background_image}"/>
+                <img class="w-100 h-100"  src={Props.background_image}/>
+                <div className="card-title">{Props.name}</div>  
+                <div className="card-body">Rating: {Props.rating}</div>
+                <div className="card-body">Metacritic: {Props.metacritic}</div>
             </div>
         )
     }
