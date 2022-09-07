@@ -37,10 +37,9 @@ export const VideojuegosApp = () => {
                                 //Reemplazamos el elemento <li> por la llamda al componente ResultadoVideojuegos, pasando 
                                 // como parámetro el género. Se tiene que utilizar la propiedad key al igual que se hizo  
                                 // con el elemento <li> anteriormente 
-                                return <ResultadoVideojuegos 
-                                    key={genero} 
-                                    genero={genero} 
-                                /> 
+                                return <InfoVideojuegos
+                                    key={genero}
+                                    genero={genero}/>
                             }) 
                         } 
                     </ol>}

@@ -22,6 +22,7 @@ export const AgregaGenero = ({ setGeneros }) => {
             setGeneros(generosActuales => [inputValue, ...generosActuales]);
             //Limpiamos input value 
             setInputValue('');
+            
         }
     }
 
