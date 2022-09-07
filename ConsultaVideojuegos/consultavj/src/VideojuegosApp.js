@@ -31,7 +31,7 @@ export const VideojuegosApp = () => {
                     {/* 
                     Creamos la lista de géneros 
                     */} 
-                    <ol className="list-group list-group-numbered"> 
+                    {<ol className="list-group list-group-numbered"> 
                         { 
                             generos.map(genero => { 
                                 //Reemplazamos el elemento <li> por la llamda al componente ResultadoVideojuegos, pasando 
@@ -43,11 +43,9 @@ export const VideojuegosApp = () => {
                                 /> 
                             }) 
                         } 
-                    </ol>
+                    </ol>}
                 </div>
-                <div>
-                    <InfoVideojuegos/>
-                </div> 
+                 
             </div> 
  
         </> 
