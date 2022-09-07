@@ -35,18 +35,21 @@ export const InfoVideojuegos = () =>{
         <ol className="list-group"></ol>
             {
                 infoJuegos.map(({nombre, imagen}) => (
-                    <Card name={nombre} background_image={imagen}/> 
+                    <Card name={nombre} background_image={imagen} rating={rating}/> 
                 ))
             } 
         </>
     )
 
-    function Card(Props){
-        return(
-            <div className="card">
-                <div className="card-body">{Props.name}</div>
-                <img src="{Props.background_image}"/>
-            </div>
-        )
-    }
+
+}
+
+function Card(Props){
+    return(
+        <div className="card">
+            <h2 className="card-body">{Props.name}</h2>
+            <img src="{Props.background_image}"/>
+            <p>{Props.rating}</p>
+        </div>
+    )
 }
