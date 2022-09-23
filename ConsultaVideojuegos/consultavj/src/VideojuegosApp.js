@@ -2,11 +2,14 @@ import React, { useState } from 'react';
 import { AgregaGenero } from './componentes/AgregaGenero'; 
 import { ResultadoVideojuegos } from './componentes/ResultadoVideojuegos'; 
 import { InfoVideojuegos } from './componentes/InfoVideojuegos';
+import { useFetch } from './custom/useFetch';
  
 export const VideojuegosApp = () => { 
  
     //Utilizamos el hook useState para inicializar la lista de generos de videojuegos. 
     const [generos, setGeneros] = useState(['action']); 
+
+    const { loading, info } = useFetch(`https://api.rawg.io/api/games?key=1d1f0a311f094ba3af26503c85757806&genres=`+ encodeURI(generos));
 
     {/*Se elimina la función agregaGenero*/} 
  
@@ -31,7 +34,16 @@ export const VideojuegosApp = () => {
                     {/* 
                     Creamos la lista de géneros 
                     */} 
-                    {<ol className="list-group list-group-numbered"> 
+
+                    {
+                        loading?(
+                            <div className="alert alert-info text-center"> 
+                            Loading... 
+                            </div> 
+                        ):
+                        (
+                        <>
+                        <ol className="list-group list-group-numbered"> 
                         { 
                             generos.map(genero => { 
                                 //Reemplazamos el elemento <li> por la llamda al componente ResultadoVideojuegos, pasando 
@@ -42,7 +54,11 @@ export const VideojuegosApp = () => {
                                     genero={genero}/>
                             }) 
                         } 
-                    </ol>}
+                        </ol>
+                        </>
+                        )
+                    }
+                    {}
                 </div>
                  
             </div> 
