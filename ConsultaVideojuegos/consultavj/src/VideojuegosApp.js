@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import { AgregaGenero } from './componentes/AgregaGenero'; 
 import { ResultadoVideojuegos } from './componentes/ResultadoVideojuegos'; 
 import { InfoVideojuegos } from './componentes/InfoVideojuegos';
-import { useFetch } from './custom/useFetch';
+//import { useFetch } from './custom/useFetch';
  
 export const VideojuegosApp = () => { 
  
     //Utilizamos el hook useState para inicializar la lista de generos de videojuegos. 
     const [generos, setGeneros] = useState(['action']); 
 
-    const { loading, info } = useFetch(`https://api.rawg.io/api/games?key=1d1f0a311f094ba3af26503c85757806&genres=`+ encodeURI(generos));
+    //const { loading, info } = useFetch(`https://api.rawg.io/api/games?key=1d1f0a311f094ba3af26503c85757806&genres=`+ encodeURI(generos));
 
     {/*Se elimina la función agregaGenero*/} 
  
@@ -35,7 +35,7 @@ export const VideojuegosApp = () => {
                     Creamos la lista de géneros 
                     */} 
 
-                    {
+                    {/*
                         loading?(
                             <div className="alert alert-info text-center"> 
                             Loading... 
@@ -57,8 +57,19 @@ export const VideojuegosApp = () => {
                         </ol>
                         </>
                         )
-                    }
-                    {}
+                    */}
+                    {<ol className="list-group list-group-numbered"> 
+                        { 
+                            generos.map(genero => { 
+                                //Reemplazamos el elemento <li> por la llamda al componente ResultadoVideojuegos, pasando 
+                                // como parámetro el género. Se tiene que utilizar la propiedad key al igual que se hizo  
+                                // con el elemento <li> anteriormente 
+                                return <InfoVideojuegos
+                                    key={genero}
+                                    genero={genero}/>
+                            }) 
+                        } 
+                        </ol>}
                 </div>
                  
             </div> 
