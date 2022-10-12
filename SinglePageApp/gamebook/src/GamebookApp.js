@@ -1,9 +1,10 @@
 import React from 'react'; 
+import { MainAppRouter } from './routers/MainAppRouter';
  
 export const GamebookApp = () => { 
     return ( 
         <> 
-            <h1>Gamebook App</h1> 
+            <MainAppRouter/>
         </> 
     ) 
  
