@@ -21,7 +21,7 @@ export const BuscadorScreen = () => {
     //Desestructuramos la variable 'busqueda' del query string.  
     const { busqueda = '' } = queryString.parse(location.search); 
     console.log(busqueda);     
-    
+
  
     const [formValues, handleInputChange] = useForm({ 
         criterioBusqueda: busqueda 
@@ -39,6 +39,8 @@ export const BuscadorScreen = () => {
         //Generamos el query string en la URL 
         navigate(`?busqueda=${criterioBusqueda}`); 
     } 
+
+    
     return ( 
         <> 
             <h1>Buscador</h1> 
