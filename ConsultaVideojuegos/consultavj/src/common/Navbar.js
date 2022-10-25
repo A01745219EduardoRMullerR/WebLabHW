@@ -6,7 +6,7 @@ export const Navbar = () => {
     return( 
         <nav className="navbar navbar-expand-sm navbar-dark bg-dark"> 
             <Link className="navbar-brand" 
-                  to="/" 
+                  to="/videojuegos" 
             > 
                 Gamebook 
             </Link> 
@@ -43,7 +43,7 @@ export const Navbar = () => {
                     <NavLink 
                         className={({ isActive }) => isActive ? "active" : "nav-item nav-link"} 
                         exact="true" 
-                        to="/bienvenida" 
+                        to="/login" 
                     > 
                         Salir 
                     </NavLink> 

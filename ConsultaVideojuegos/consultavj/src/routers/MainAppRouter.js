@@ -4,6 +4,9 @@ import {
     Routes, 
     Route 
 } from "react-router-dom"; 
+import { LoginScreen } from '../componentes/Login/LoginScreen';
+import { Videojuegos } from '../componentes/Videojuegos';
+import { AppRouter } from './AppRouter';
 //import { Navbar } from '../common/Navbar';
 
 export const MainAppRouter = () => { 
@@ -15,7 +18,7 @@ export const MainAppRouter = () => {
                     <Route exact path="/login" element={<LoginScreen/>} /> 
                     <Route 
                         path="*" 
-                        element={<GamesRouter/>} 
+                        element={<AppRouter/>} 
                     />    
                 </Routes> 
             </div> 
