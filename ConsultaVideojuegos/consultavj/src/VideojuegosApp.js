@@ -1,9 +1,5 @@
 import React, { useState } from 'react'; 
-import { AgregaGenero } from './componentes/AgregaGenero'; 
-import { ResultadoVideojuegos } from './componentes/ResultadoVideojuegos'; 
-import { InfoVideojuegos } from './componentes/InfoVideojuegos';
 import { useFetch } from './custom/useFetch';
-import { AppRouter } from './routers/AppRouter';
 import { MainAppRouter } from './routers/MainAppRouter';
  
 export const VideojuegosApp = () => { 

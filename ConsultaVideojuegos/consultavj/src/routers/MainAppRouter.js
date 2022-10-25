@@ -5,7 +5,6 @@ import {
     Route 
 } from "react-router-dom"; 
 import { LoginScreen } from '../componentes/Login/LoginScreen';
-import { Videojuegos } from '../componentes/Videojuegos';
 import { AppRouter } from './AppRouter';
 //import { Navbar } from '../common/Navbar';
 

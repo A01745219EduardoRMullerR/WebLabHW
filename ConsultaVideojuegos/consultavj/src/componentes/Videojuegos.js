@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { AgregaGenero } from './AgregaGenero';
 import { InfoVideojuegos } from './InfoVideojuegos';
 import { useFetch } from '../custom/useFetch';
-import { Navigate, useNavigate } from 'react-router-dom';
 
 export const Videojuegos = () => { 
  
