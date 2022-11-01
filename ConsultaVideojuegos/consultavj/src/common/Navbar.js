@@ -1,6 +1,7 @@
 import React from 'react'; 
 //Con Link y NavLink vamos a poder navegar entre las diferentes páginas utilizando el Router de React. 
 import { Link, NavLink } from 'react-router-dom'; 
+import { UserContext } from '../hooks/context/UserContext';
  
 export const Navbar = () => { 
     return( 
@@ -47,8 +48,19 @@ export const Navbar = () => {
                     > 
                         Salir 
                     </NavLink> 
-                </ul> 
+                </ul>
             </div> 
+            <div className='navbar-collapse collapse w-101 order-3 dual-collapse2'>
+                
+                <h5 className='NavbarText'>Hola {UserContext.name}</h5>
+                
+                <img
+                alt=""
+                src="..\..\public\profile-icon-1.png"
+                width="30"
+                height="30"/>
+
+            </div>
         </nav> 
     ) 
 } 
