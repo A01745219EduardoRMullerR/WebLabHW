@@ -6,7 +6,9 @@ import { UserContext } from '../hooks/context/UserContext';
  
 export const Navbar = () => { 
 
-    const {user, setUser} = useContext(UserContext);
+    const { user, setUser } = useContext(UserContext);
+
+    const userName = JSON.stringify(user.name)
 
     return( 
         <nav className="navbar navbar-expand-sm navbar-dark bg-dark"> 
@@ -56,7 +58,8 @@ export const Navbar = () => {
             </div> 
             <div className='navbar-collapse collapse w-101 order-3 dual-collapse2'>
                 
-                <h5 className='NavbarText'>Hola {JSON.stringify(user, null, 3)}</h5>
+                <h5 className='NavbarText'>Hola {JSON.stringify(user.name)}</h5>
+
                 <img
                 alt=""
                 src="..\..\public\profile-icon-1.png"

@@ -7,6 +7,7 @@ export const VideojuegosApp = () => {
  
     //Utilizamos el hook useState para inicializar la lista de generos de videojuegos. 
     const [generos, setGeneros] = useState(['action']); 
+    const [user, setUser] = useState({}); 
 
     const [user, setUser] =  useState({});
 

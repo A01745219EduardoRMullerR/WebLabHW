@@ -33,10 +33,10 @@ export const InfoVideojuegos = ({genero}) =>{
     return(
         <>
         <h3 className="card-title">{genero}</h3>
-        <div  class="d-flex flex-wrap">
+        <div  className="d-flex flex-wrap">
             <div className="d-flex flex-row">{
                 infoJuegos.map(({nombre, imagen, rating, metacritic}) => (
-                    <div class="p-2"> <Card name={nombre} background_image={imagen} rating ={rating} metacritic = {metacritic}/> </div>
+                    <div className="p-2"> <Card name={nombre} background_image={imagen} rating ={rating} metacritic = {metacritic}/> </div>
                 ))
             } </div>
             </div>
@@ -48,7 +48,7 @@ export const InfoVideojuegos = ({genero}) =>{
         return(
 
             <div className="card">
-                <img class="w-100 h-100"  src={Props.background_image}/>
+                <img className="w-100 h-100"  src={Props.background_image}/>
                 <div className="card-title">{Props.name}</div>  
                 <div className="card-body">Rating: {Props.rating}</div>
                 <div className="card-body">Metacritic: {Props.metacritic}</div>
