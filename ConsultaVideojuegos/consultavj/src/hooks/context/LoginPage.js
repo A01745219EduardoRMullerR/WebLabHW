@@ -24,15 +24,14 @@ export const LoginPage = () => {
     const navigate = useNavigate();
     
     const doLogin = () => {
-        console.log("Se hizo login");
+        console.log("Se hizo login :D");
         console.log(nombre);
         navigate("/videojuegos");
         
         setUser({
             id: 1,
-            name: 'Eddu',
-            email: 'edumullerr@maildrop.cc'
-
+            user: nombre,
+            email: email
         });
         
     }

@@ -9,13 +9,15 @@ export const VideojuegosApp = () => {
     const [generos, setGeneros] = useState(['action']); 
     const [user, setUser] = useState({}); 
 
+    const [user, setUser] =  useState({});
+
     const { loading, info } = useFetch(`https://api.rawg.io/api/games?key=1d1f0a311f094ba3af26503c85757806&genres=`+ encodeURI(generos));
 
     {/*Se elimina la función agregaGenero*/} 
  
     return ( 
         <> 
-            <UserContext.Provider value={
+            <UserContext.Provider value ={
                 {
                     user,
                     setUser

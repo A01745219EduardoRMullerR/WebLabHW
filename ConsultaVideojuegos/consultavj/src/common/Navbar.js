@@ -59,6 +59,7 @@ export const Navbar = () => {
             <div className='navbar-collapse collapse w-101 order-3 dual-collapse2'>
                 
                 <h5 className='NavbarText'>Hola {JSON.stringify(user.name)}</h5>
+
                 <img
                 alt=""
                 src="..\..\public\profile-icon-1.png"
