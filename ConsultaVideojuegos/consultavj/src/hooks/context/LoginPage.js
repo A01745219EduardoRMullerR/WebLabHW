@@ -4,7 +4,7 @@ import {UserContext} from './UserContext'
  
 export const LoginPage = () => { 
  
-    const { setUser } = createContext(UserContext); 
+    const { setUser } = useContext(UserContext); 
 
     const [formState, setFormState] = useState({
         nombre: '',
@@ -29,14 +29,17 @@ export const LoginPage = () => {
         navigate("/videojuegos");
         
         setUser({
-            name: nombre
+            id: 1,
+            name: 'Eddu',
+            email: 'edumullerr@maildrop.cc'
+
         });
         
     }
  
     return ( 
         <> 
-            <div class="center">
+            <div className="center">
                 <h1>Welcome!! :D</h1> 
 
                 <h3>Login Information</h3>
