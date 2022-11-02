@@ -1,6 +1,7 @@
 import React from 'react'; 
 //Con Link y NavLink vamos a poder navegar entre las diferentes páginas utilizando el Router de React. 
 import { Link, NavLink } from 'react-router-dom'; 
+import { LoginPage } from '../hooks/context/LoginPage';
 import { UserContext } from '../hooks/context/UserContext';
  
 export const Navbar = () => { 
@@ -52,8 +53,7 @@ export const Navbar = () => {
             </div> 
             <div className='navbar-collapse collapse w-101 order-3 dual-collapse2'>
                 
-                <h5 className='NavbarText'>Hola {UserContext.name}</h5>
-                
+                <h5 className='NavbarText'>Hola {LoginPage.nombre}</h5>
                 <img
                 alt=""
                 src="..\..\public\profile-icon-1.png"

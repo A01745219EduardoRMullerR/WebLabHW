@@ -1,10 +1,10 @@
-import React, { useContext, useEffect, useState } from 'react'; 
+import React, { createContext, useContext, useEffect, useState } from 'react'; 
 import { useNavigate } from 'react-router-dom';
 import {UserContext} from './UserContext'
  
 export const LoginPage = () => { 
  
-    const { setUser } = useContext(UserContext); 
+    const { setUser } = createContext(UserContext); 
 
     const [formState, setFormState] = useState({
         nombre: '',
@@ -24,12 +24,13 @@ export const LoginPage = () => {
     const navigate = useNavigate();
     
     const doLogin = () => {
-        setUser({
-            name: "Eddu"
-        })
         console.log("Se hizo login");
-        console.log(UserContext.name);
+        console.log(nombre);
         navigate("/videojuegos");
+        
+        setUser({
+            name: nombre
+        });
         
     }
  
@@ -64,7 +65,7 @@ export const LoginPage = () => {
                 </div>
                 {(nombre == 'Eddu' && email == 'edumullerr@maildrop.cc') && <button 
                     className="btn btn-primary" 
-                    onClick={() => doLogin() }
+                    onClick={() => doLogin()}
                 > 
                     Login 
                 </button> }
