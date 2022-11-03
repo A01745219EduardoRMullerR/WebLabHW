@@ -41,10 +41,10 @@ module.exports.obtener_juego = function (req, res) {
 module.exports.eliminar_juego = function (req, res){
     fs.readFile(__dirname + "/" + "juegos.json", 'utf8', function (err, data) { 
         const array = JSON.parse(data);
-        console.log(err);
+        //console.log(err);
         const elim = req.body.id;
-        console.log(elim);
-        let counter = 0
+        //console.log(elim);
+        let counter = 0;
         for(let i=0; i<array.length; i++){
             let juego_id = array[i].id;
             if(juego_id == elim){
@@ -61,11 +61,34 @@ module.exports.eliminar_juego = function (req, res){
                 console.log(err);
             })
 
-        } else {console.log("not in data")}
-        
-        res.end(JSON.stringify(array))
+        } 
+        else {
+            console.log("not in data"); 
+            res.end("Not found"); 
+            return;
+        }
 
-        
+        res.end(JSON.stringify(array));
     
     });
+}
+
+module.exports.buscar_juego = function(req, res){
+
+    const search = req.body.nombre;
+
+    fs.readFile(__dirname + "/" + "juegos.json", 'utf8', function (err, data) { //callback function para que no crasheen los errores
+        const array = JSON.parse(data);
+        console.log(err);
+        let lostNfound = [];
+        for(let n = 0; n < array.length; n++){
+            let nombre_juego = array[n].nombre.split(" ");
+            
+        }
+
+        res.end(":D");
+
+
+    });
+
 }
