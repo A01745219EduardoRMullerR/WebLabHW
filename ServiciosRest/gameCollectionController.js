@@ -82,11 +82,19 @@ module.exports.buscar_juego = function(req, res){
         console.log(err);
         let lostNfound = [];
         for(let n = 0; n < array.length; n++){
-            let nombre_juego = array[n].nombre.split(" ");
+            let nombre_juego = array[n].nombre;
+            let nombre_juego_arr = nombre_juego.split(" ");
+            for(let m = 0; m<nombre_juego_arr.length; m++){
+                if(search == nombre_juego_arr[m]){
+                    console.log("Found!\n search: " + search + " found: " + JSON.stringify(array[n]));
+                    lostNfound.push(array[n]);
+                    console.log(lostNfound);
+                }
+            }
             
         }
 
-        res.end(":D");
+        res.end(JSON.stringify(lostNfound));
 
 
     });
