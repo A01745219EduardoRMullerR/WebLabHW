@@ -9,5 +9,8 @@ module.exports = function(app) {
     .post(gameCollection.agregar_juego); //POST agrega un juego con enviar un formato JSON
  
   app.route('/games/:gameIndex') 
-    .get(gameCollection.obtener_juego); 
+    .get(gameCollection.obtener_juego);
+  
+  app.route('/games/delete')
+    .post(gameCollection.eliminar_juego);
 };
