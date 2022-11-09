@@ -65,7 +65,7 @@ export const LoginPage = () => {
                         onChange={handleInputChange}
                     />
                 </div>
-                {(nombre == 'Eddu' && email == 'edumullerr@maildrop.cc') && <button 
+                {(nombre == 'web' && email == 'web@gmail.com') && <button 
                     className="btn btn-primary" 
                     onClick={() => doLogin()}
                 > 

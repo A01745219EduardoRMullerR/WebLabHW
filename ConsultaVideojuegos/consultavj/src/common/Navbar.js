@@ -44,7 +44,29 @@ export const Navbar = () => {
                     
                 </div> 
             </div> 
- 
+
+            <div className="navbar-collapse"> 
+                <div className="navbar-nav"> 
+
+                    <NavLink 
+                                activeClassName="active" 
+                                className="nav-item nav-link" 
+                                exact 
+                                to="/pc" 
+                            > 
+                                PC 
+                            </NavLink> 
+        
+                            <NavLink 
+                            className={({ isActive }) => isActive ? "active" : "nav-item nav-link"} 
+                            exact="true" 
+                            to="/buscar" 
+                            > 
+                            Buscar 
+                            </NavLink>  
+                </div> 
+            </div> 
+
             <div className="navbar-collapse collapse w-100 order-3 dual-collapse2"> 
                 <ul className="navbar-nav ml-auto"> 
                     <NavLink 
@@ -58,7 +80,7 @@ export const Navbar = () => {
             </div> 
             <div className='navbar-collapse collapse w-101 order-3 dual-collapse2'>
                 
-                <h5 className='NavbarText'>Hola {user.user}</h5>
+                <h5 className='NavbarText'>Bienvenid@ {user.user}</h5>
 
                 <img
                 alt=""
