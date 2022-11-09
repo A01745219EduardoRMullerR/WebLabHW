@@ -7,12 +7,12 @@ module.exports = function(app) {
   app.route('/games') //http://localhost:8585/games --> POST agrega un juego con enviar un formato JSON y GET obtiene todos los juegos de juegos.json
     .get(gameCollection.obtener_juegos) //GET obtiene todos los juegos de juegos.json
     .post(gameCollection.agregar_juego) //POST agrega un juego con enviar un formato JSON
-    .delete(gameCollection.eliminar_juego); //DELETE borra un juego en base a su ID
+    .delete(gameCollection.eliminar_juego); //DELETE borra un juego en base a su ID que se envia en el body ej: {"id":"example"}
  
   app.route('/games/:gameIndex') 
     .get(gameCollection.obtener_juego);
 
   app.route('/games/search')
-    .post(gameCollection.buscar_juego);
+    .post(gameCollection.buscar_juego); //POST que encuentra todos los juegos que contengan el campo que se envia en el body ej: {"nombre": "example"}
 
 };
