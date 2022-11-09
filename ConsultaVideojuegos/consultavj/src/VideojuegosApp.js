@@ -9,6 +9,7 @@ export const VideojuegosApp = () => {
     const [generos, setGeneros] = useState(['action']); 
 
     const [user, setUser] = useState({}); 
+    //console.log("User: " + user.user);
 
     const { loading, info } = useFetch(`https://api.rawg.io/api/games?key=1d1f0a311f094ba3af26503c85757806&genres=`+ encodeURI(generos));
 

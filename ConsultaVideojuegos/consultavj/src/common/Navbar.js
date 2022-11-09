@@ -58,7 +58,7 @@ export const Navbar = () => {
             </div> 
             <div className='navbar-collapse collapse w-101 order-3 dual-collapse2'>
                 
-                <h5 className='NavbarText'>Hola {JSON.stringify(user.name)}</h5>
+                <h5 className='NavbarText'>Hola {user.user}</h5>
 
                 <img
                 alt=""
