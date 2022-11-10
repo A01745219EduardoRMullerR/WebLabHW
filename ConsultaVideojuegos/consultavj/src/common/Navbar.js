@@ -40,6 +40,13 @@ export const Navbar = () => {
                     >
                         Mi Coleccion    
                     </NavLink>
+                    <NavLink
+                        className={({ isActive }) => isActive ? "active" : "nav-item nav-link"}
+                        exact="true"
+                        to="/Buscador"
+                    >
+                        Buscador
+                    </NavLink>
  
                     
                 </div> 
