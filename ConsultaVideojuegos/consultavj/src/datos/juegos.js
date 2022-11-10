@@ -166,5 +166,117 @@ export const juegos = [
         'plataforma': 'Xbox',
         'developer': 'Double Fine',
         'personaje_principal': 'Raz'
+    },
+    {
+        'id': 'Fifa08',
+        'nombre': 'FIFA 08',
+        'plataforma': 'Xbox',
+        'developer': 'Electronic Arts',
+        'personaje_principal': 'Ronaldinho'
+    },
+    {
+        'id': 'Fifa09',
+        'nombre': 'FIFA 09',
+        'plataforma': 'Xbox',
+        'developer': 'Electronic Arts',
+        'personaje_principal': 'Ronaldinho'
+    },
+    {
+        'id': 'Fifa11',
+        'nombre': 'FIFA 11',
+        'plataforma': 'PSP',
+        'developer': 'Electronic Arts',
+        'personaje_principal': 'Kaka'
+    },
+    {
+        'id': 'Fifa10',
+        'nombre': 'FIFA 10',
+        'plataforma': 'Wii',
+        'developer': 'Electronic Arts',
+        'personaje_principal': 'Cuauhtemoc Blanco'
+    },
+    {
+        'id': 'Fifa12',
+        'nombre': 'FIFA 12',
+        'plataforma': 'Xbox',
+        'developer': 'Electronic Arts',
+        'personaje_principal': 'Lionel Messi'
+    },
+    {
+        'id': 'Fifa13',
+        'nombre': 'FIFA 13',
+        'plataforma': 'Xbox',
+        'developer': 'Electronic Arts',
+        'personaje_principal': 'Lionel Messi'
+    },
+    {
+        'id': 'Fifa14',
+        'nombre': 'FIFA 14',
+        'plataforma': 'Xbox',
+        'developer': 'Electronic Arts',
+        'personaje_principal': 'Lionel Messi'
+    },
+    {
+        'id': 'Fifa15',
+        'nombre': 'FIFA 15',
+        'plataforma': 'Xbox',
+        'developer': 'Electronic Arts',
+        'personaje_principal': 'Lionel Messi'
+    },
+    {
+        'id': 'Fifa16',
+        'nombre': 'FIFA 16',
+        'plataforma': 'Xbox',
+        'developer': 'Electronic Arts',
+        'personaje_principal': 'Alex Morgan'
+    },
+    {
+        'id': 'Fifa17',
+        'nombre': 'FIFA 17',
+        'plataforma': 'Xbox',
+        'developer': 'Electronic Arts',
+        'personaje_principal': 'Marco Reus'
+    },
+    {
+        'id': 'Fifa18',
+        'nombre': 'FIFA 18',
+        'plataforma': 'Xbox',
+        'developer': 'Electronic Arts',
+        'personaje_principal': 'Cristiano Ronaldo'
+    },
+    {
+        'id': 'Fifa19',
+        'nombre': 'FIFA 19',
+        'plataforma': 'Xbox',
+        'developer': 'Electronic Arts',
+        'personaje_principal': 'Cristiano Ronaldo'
+    },
+    {
+        'id': 'Fifa20',
+        'nombre': 'FIFA 20',
+        'plataforma': 'Xbox',
+        'developer': 'Electronic Arts',
+        'personaje_principal': 'Eden Hazard'
+    },
+    {
+        'id': 'Fifa21',
+        'nombre': 'FIFA 21',
+        'plataforma': 'Play Station',
+        'developer': 'Electronic Arts',
+        'personaje_principal': 'Mbappe'
+    },
+    {
+        'id': 'Fifa22',
+        'nombre': 'FIFA 22',
+        'plataforma': 'Play Station',
+        'developer': 'Electronic Arts',
+        'personaje_principal': 'Mbappe'
+    },
+    {
+        'id': 'Fifa23',
+        'nombre': 'FIFA 23',
+        'plataforma': 'Play Station',
+        'developer': 'Electronic Arts',
+        'personaje_principal': 'Mbappe'
     }
 ]
