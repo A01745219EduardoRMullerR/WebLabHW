@@ -1,8 +1,9 @@
-import { InfoVideojuegos } from "./InfoVideojuegos";
- 
 export const getGamesBySearch = (busqueda = '') => { 
     if(busqueda === ''){ 
         return []; 
     } 
-    return InfoVideojuegos.filter(juego => juego.nombre.toLowerCase().includes(busqueda.toLowerCase())); 
-} 
+
+    const juegos = JSON.parse(localStorage.getItem("games"));
+    console.log ('Juegos Value = ',juegos)
+    return juegos.filter(juego => juego.juego.name.toLowerCase().includes(busqueda.toLowerCase())); 
+}
