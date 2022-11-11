@@ -1,18 +1,33 @@
-import React from 'react'; 
+import React, { useMemo } from 'react'; 
+import { useLocation } from 'react-router'; 
+import queryString from 'query-string'; 
 import { GameCollection } from './GameCollection'; 
 import { GameCollectionItem } from './GameCollectionItem';
 import { InfoVideojuegos } from './InfoVideojuegos';
 import { useForm } from '../hooks/context/useForm';  
+import { getGamesBySearch } from './getGamesBySearch';
  
 export const BuscadorVideojuego = () => { 
  
-    const juegosFiltrados = InfoVideojuegos; 
+    const location = useLocation(); 
+    console.log(location.search); 
+
+    //Utilizamos la librería query-string para parsear el query string de la url.  
+    console.log(queryString.parse(location.search)); 
+
+    //Desestructuramos la variable 'busqueda' del query string.  
+    const { busqueda = '' } = queryString.parse(location.search); 
+    console.log(busqueda);     
+
  
     const [formValues, handleInputChange] = useForm({ 
-        criterioBusqueda: '' 
+        criterioBusqueda: busqueda 
     }); 
  
     const { criterioBusqueda } = formValues; 
+ 
+    //Utilizamos useMemo para memorizar la busqueda  
+    const juegosFiltrados = useMemo(() => getGamesBySearch(busqueda), [busqueda]); 
      
     const handleBusqueda = (e) => { 
         e.preventDefault(); 
@@ -51,8 +66,8 @@ export const BuscadorVideojuego = () => {
  
                     { 
                         //Recorremos el resultado de la búsqueda de los juegos. 
-                        juegosFiltrados.map(game => ( 
-                            <InfoVideojuegos key={game.id} 
+                        (game => ( 
+                            <GameCollection key={game.id} 
                                       game={game}/> 
                         )) 
                     } 
@@ -61,5 +76,17 @@ export const BuscadorVideojuego = () => {
             </div> 
         </> 
     ) 
+
+    function Card(Props){
+        return(
+
+            <div className="card">
+                <img className="w-100 h-100"  src={Props.background_image}/>
+                <div className="card-title">{Props.name}</div>  
+                <div className="card-body">Rating: {Props.rating}</div>
+                <div className="card-body">Metacritic: {Props.metacritic}</div>
+            </div>
+        )
+    }
  
 } 
