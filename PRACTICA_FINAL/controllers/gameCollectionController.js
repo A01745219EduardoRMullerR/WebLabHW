@@ -246,6 +246,41 @@ exports.obtenerLog_usuario = function (req, res) {
     
 };
 
+exports.eventoByFechas = function (req, res) {
+
+    MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, async function (err, mdbclient) {
+        if (err) {
+          throw err;
+        }
+  
+        const database = mdbclient.db(dbName);
+        // Referencia a la coleccion
+        const eventos = database.collection("logs");
+  
+        // Consulta sin filtros
+        var {fecha1,fecha2} = req.query;
+  
+        //console.log(`fecha 1 ${fecha1} y fecha2 ${fecha2}`)
+         // Declaramos los filtros
+        const query = { 
+          fechaEvento: {
+            $gt: new Date(fecha1),
+            $lt: new Date(fecha2)
+        }
+         };
+  
+        // Hacemos la consulta
+        const cursor = await eventos.find(query);
+  
+        const resultado = await cursor.toArray();
+  
+        res.end(JSON.stringify(resultado)); 
+      }
+    );
+  
+  };
+  
+
 exports.obtenerLog_usuario_evento = function (req, res) { 
     MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, async function (err, mdbclient) { 
         if (err) { 
