@@ -1,8 +1,6 @@
 'use strict';
 const { json } = require('express');
 
- 
- 
 const MongoClient = require('mongodb').MongoClient; 
 const url = "mongodb://127.0.0.1:27017"; 
 const dbName = 'portalVideojuegos'; 
