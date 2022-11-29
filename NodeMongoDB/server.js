@@ -6,7 +6,7 @@ var express = require('express'),
 app.use(express.urlencoded({ extended: true })); 
 app.use(express.json()); 
  
-var routes = require('./Routes/studentCollectionRoutes'); 
+var routes = require('./Routes/videogameCollectionRoutes'); 
 routes(app); 
  
 app.listen(port); 
