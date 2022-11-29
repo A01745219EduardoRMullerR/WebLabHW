@@ -12,8 +12,8 @@ export const LoginPage = () => {
     });
     const {email, password} = formState;
     const handleInputChange = (e) => {
-        //console.log(e.target.name);
-        //console.log(e.target.value);
+        console.log(e.target.name);
+        console.log(e.target.value);
         //Actualizamos el estado del formulario.
         setFormState({
             ...formState,
@@ -28,7 +28,7 @@ export const LoginPage = () => {
         navigate("/videojuegos");
         setUser({
             id: 1,
-            correoElectronico: email,
+            user: email,
             contraseña: password
         });
         
@@ -72,4 +72,4 @@ export const LoginPage = () => {
             </div>
         </> 
     ) 
-} 
+}
