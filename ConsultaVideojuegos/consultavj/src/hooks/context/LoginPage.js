@@ -10,10 +10,10 @@ export const LoginPage = () => {
         nombre: '',
         email: ''
     });
-    const {email, password} = formState;
+    const {nombre, email} = formState;
     const handleInputChange = (e) => {
-        console.log(e.target.name);
-        console.log(e.target.value);
+        //console.log(e.target.name);
+        //console.log(e.target.value);
         //Actualizamos el estado del formulario.
         setFormState({
             ...formState,
@@ -24,12 +24,14 @@ export const LoginPage = () => {
     const navigate = useNavigate();
     
     const doLogin = () => {
-        
+        console.log("Se hizo login :D");
+        console.log(nombre);
         navigate("/videojuegos");
+        
         setUser({
             id: 1,
-            user: email,
-            contraseña: password
+            user: nombre,
+            email: email
         });
         
     }
@@ -46,9 +48,9 @@ export const LoginPage = () => {
                         type="text"
                         name="nombre"
                         className="form-control"
-                        placeholder="Correo"
+                        placeholder="Nombre"
                         autoComplete="off"
-                        value={email}
+                        value={nombre}
                         onChange={handleInputChange}
                     />
                 </div>
@@ -57,18 +59,18 @@ export const LoginPage = () => {
                         type="text"
                         name="email"
                         className="form-control"
-                        placeholder="Contraseña"
+                        placeholder="Correo Electrónico"
                         autoComplete="off"
-                        value={password}
+                        value={email}
                         onChange={handleInputChange}
                     />
                 </div>
-                <button 
+                {(nombre == 'web' && email == 'web@gmail.com') && <button 
                     className="btn btn-primary" 
                     onClick={() => doLogin()}
                 > 
                     Login 
-                </button>
+                </button> }
             </div>
         </> 
     ) 

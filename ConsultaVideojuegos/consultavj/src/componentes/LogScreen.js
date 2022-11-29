@@ -24,10 +24,13 @@ export const LogScreen = () => {
         const url = 'http://localhost:8585/logsUser';
         //Utilizamos Fetch API para invocar la url. 
         const respuesta = await fetch(url, {
-            method: "GET",
-            body: JSON.stringify(datos),
-            headers: {"Content-type": "application/json; charset=UTF-8"}
+            method: "POST",
+            body: JSON.stringify({"user": user.user}),
+            headers: {"Content-type": "application/json; charset=UTF-8"},
+            mode: "no-cors"
+        
         });
+        console.log("Respuesta"+JSON.stringify(respuesta))
         //Recuperamos el JSON de la respuesta, el cual contiene la información de los videojuegos. 
         const { results } = await respuesta.json();
 
