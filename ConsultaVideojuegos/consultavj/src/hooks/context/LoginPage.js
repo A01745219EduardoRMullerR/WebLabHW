@@ -1,10 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react'; 
 import { useNavigate } from 'react-router-dom';
 import {UserContext} from './UserContext'
-
-const MongoClient = require('mongodb').MongoClient; 
-const url = "mongodb://127.0.0.1:27017"; 
-const dbName = 'portalVideojuegos'; 
  
 export const LoginPage = () => { 
  
@@ -27,31 +23,9 @@ export const LoginPage = () => {
 
     const navigate = useNavigate();
     
-    const doLogin = (req, res) => {
-        MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, async function (err, mdbclient) { 
-            if (err) { 
-                throw err; 
-            } 
-     
-            const database = mdbclient.db(dbName); 
-     
-            // Referencia a la coleccion 
-            const users = database.collection("users"); 
-    
-            var correoElectronico = req.body.correo;
-            var contraseña = req.body.password;
-     
-            // Consulta sin filtros 
-            const query = {email: correoElectronico, password: contraseña}; 
-     
-     
-            // Hacemos la consulta 
-           const user = await users.findOne(query);
-           navigate("/videojuegos");
-           console.log("Consulta por correo");
-           res.end(JSON.stringify(user))
-        });
+    const doLogin = () => {
         
+        navigate("/videojuegos");
         setUser({
             id: 1,
             correoElectronico: email,

@@ -164,6 +164,34 @@ exports.obtenerJuego_usuario = function (req, res) {
     
 };
 
+exports.getVideogames = function (req, res) {
+
+    MongoClient.connect(
+      url,
+      { useNewUrlParser: true, useUnifiedTopology: true },
+      async function (err, mdbclient) {
+        if (err) {
+          throw err;
+        }
+  
+        const database = mdbclient.db(dbName);
+        // Referencia a la coleccion
+        const juegos = database.collection("videojuegos");
+  
+        // Consulta sin filtros
+        var usuario = req.params.usuario;
+        // Declaramos los filtros
+        const query = { username : usuario };
+        // Hacemos la consulta
+        const videojuegos = await juegos.find(query);
+  
+        const resultado = await videojuegos.toArray();
+        res.end(JSON.stringify(resultado)); 
+      }
+    );
+  
+  };
+
 exports.obtenerConsola_usuario = function (req, res) { 
     MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, async function (err, mdbclient) { 
         if (err) { 
